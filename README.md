@@ -40,7 +40,7 @@ cd TestTaskMonitel && docker compose up
 cd TestTaskMonitel/Main.WebApi && dotnet ef migrations add InitialMigration --project ../Main.DAL.Database --startup-project . --output-dir Migrations && dotnet ef database update --project ../Main.DAL.Database --startup-project .
 ```
 
-### Шаг 4. Запуск проекта 
+### Шаг 4. Запуск проекта (Для наличия тестовых данных необходимо запускать в Development режиме)
 
 ```bash
 dotnet run
