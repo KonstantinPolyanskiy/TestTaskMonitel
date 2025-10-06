@@ -1,5 +1,8 @@
-namespace Main.Application.Services.BrowseService.Models;
+namespace Main.WebApi.Models;
 
+/// <summary>
+/// Ответ на запрос поиска фильма в показе.
+/// </summary>
 public sealed record ShowtimeOccurrenceResponse(
     DateOnly Date,
     TimeOnly StartTime,

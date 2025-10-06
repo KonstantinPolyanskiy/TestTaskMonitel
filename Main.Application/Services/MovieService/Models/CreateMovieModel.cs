@@ -1,6 +1,6 @@
 namespace Main.Application.Services.MovieService.Models;
 
-public sealed class CreateMovieRequest
+public sealed class CreateMovieModel
 {
     public string Title { get; init; } = string.Empty;
     public int Year { get; init; }

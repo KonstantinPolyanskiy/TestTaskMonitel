@@ -1,5 +1,8 @@
-namespace Main.Application.Services.BrowseService.Models;
+namespace Main.WebApi.Models;
 
+/// <summary>
+/// Запрос на поиск активных сеансов.
+/// </summary>
 public sealed class ActiveShowtimesRequest
 {
     public List<int>? GenreIds { get; init; }

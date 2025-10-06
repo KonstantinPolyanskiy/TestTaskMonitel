@@ -1,5 +1,8 @@
-namespace Main.Application.Services.BrowseService.Models;
+namespace Main.WebApi.Models;
 
+/// <summary>
+/// Ответ на запрос поиска фильма. 
+/// </summary>
 public sealed record MovieSearchItemResponse(
     Guid MovieId,
     string Title,

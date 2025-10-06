@@ -1,7 +1,10 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Main.Application.Services.BrowseService.Models;
+namespace Main.WebApi.Models;
 
+/// <summary>
+/// Запрос на поиск фильма в показе.
+/// </summary>
 public sealed class MovieShowtimesRequest
 {
     [Required] 

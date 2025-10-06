@@ -1,6 +1,8 @@
-namespace Main.Application.Services.BrowseService.Models;
+namespace Main.WebApi.Models;
 
-
+/// <summary>
+/// Запрос на поиск фильма. 
+/// </summary>
 public sealed class MovieSearchRequest
 {
     public string? Q { get; init; }

@@ -1,6 +1,9 @@
 namespace Main.Domain.Exceptions;
 
-public class AlreadyChangedException
+/// <summary>
+/// Исключение, выбрасываемое в случае, если произошла попытка обновить неактуальную сущностью
+/// </summary>
+public sealed class AlreadyChangedException : Exception
 {
-    
+    public AlreadyChangedException(string message) : base(message) { }
 }

@@ -1,5 +1,10 @@
-namespace Main.Application.Services.BrowseService.Models;
+using Main.Application.Services.BrowseService.Models;
 
+namespace Main.WebApi.Models;
+
+/// <summary>
+/// Ответ на запрос показов.
+/// </summary>
 public sealed record GroupedShowtimesResponse(
     Guid MovieId,
     string Title,
