@@ -22,6 +22,8 @@
 - **Tests** - Тесты  
                              
 ## Запуск проекта c Docker
+
+### Шаг 1. Клонирование проекта
 ```bash
 git clone https://github.com/KonstantinPolyanskiy/TestTaskMonitel.git
 ```
@@ -35,7 +37,7 @@ cd TestTaskMonitel && docker compose up
 ### Шаг 3. Создать и применить миграции
 
 ```bash
-cd Main.WebApi && dotnet ef migrations add InitialMigration --project ../Main.DAL.Database --startup-project . --output-dir Migrations && dotnet ef database update --project ../Main.DAL.Database --startup-project .
+cd TestTaskMonitel/Main.WebApi && dotnet ef migrations add InitialMigration --project ../Main.DAL.Database --startup-project . --output-dir Migrations && dotnet ef database update --project ../Main.DAL.Database --startup-project .
 ```
 
 ### Шаг 4. Запуск проекта 
