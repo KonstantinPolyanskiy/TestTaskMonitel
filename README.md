@@ -22,6 +22,8 @@
 - **Tests** - Тесты  
                              
 ## Запуск проекта c Docker
+
+### Шаг 1. Клонирование проекта
 ```bash
 git clone https://github.com/KonstantinPolyanskiy/TestTaskMonitel.git
 ```
