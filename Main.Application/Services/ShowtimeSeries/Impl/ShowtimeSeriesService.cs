@@ -80,4 +80,29 @@ public sealed class ShowtimeSeriesService
 
         return candidate;
     }
+
+    public async Task<List<ShowtimeSeriesDto>> GetAllAsync(CancellationToken ct = default)
+    {
+        var items = await _db.ShowtimesSeries.AsNoTracking()
+            .Join(_db.Movies.AsNoTracking(), s => s.MovieId, m => m.Id, (s, m) => new { s, m })
+            .Join(_db.Halls.AsNoTracking(), sm => sm.s.HallId, h => h.Id, (sm, h) => new { sm.s, sm.m, h })
+            .OrderBy(x => x.m.Title)
+            .ThenBy(x => x.h.Name)
+            .ThenBy(x => x.s.ActiveFrom)
+            .ThenBy(x => x.s.StartTime)
+            .Select(x => new ShowtimeSeriesDto(
+                x.s.Id,
+                x.s.MovieId,
+                x.m.Title,
+                x.s.HallId,
+                x.h.Name,
+                x.s.StartTime,
+                x.s.ActiveFrom,
+                x.s.ActiveTo,
+                x.s.BasePrice,
+                x.s.Status))
+            .ToListAsync(ct);
+
+        return items;
+    }
 }

@@ -1,5 +1,6 @@
 using Main.Application.Services.ShowtimeSeries.Impl;
 using Main.Application.Services.ShowtimeSeries.Models;
+using Main.Domain.Exceptions;
 using Main.Domain.Session;
 using Main.WebApi.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -42,4 +43,13 @@ public sealed class ShowtimeSeriesController : ControllerBase
         return Ok(showtimeSeries);
     }
 
+    [HttpGet]
+    [ProducesResponseType(typeof(ShowtimeSeries), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
+    public async Task<IActionResult> GetAll(CancellationToken ct = default)
+    {
+        var showtimes = await _showtimeSeriesService.GetAllAsync(ct);
+
+        return Ok(showtimes);
+    }
 }

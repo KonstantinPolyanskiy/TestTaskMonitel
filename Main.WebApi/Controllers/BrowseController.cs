@@ -120,7 +120,7 @@ public sealed class BrowseController : ControllerBase
         var model = new MovieShowtimesModel
         {
             MovieId = movieId,
-            HallIds = (req.HallIds ?? new()).Distinct().ToArray(),
+            HallIds = (req.HallIds ?? []).Distinct().ToArray(),
             From = from,
             To   = to
         };
